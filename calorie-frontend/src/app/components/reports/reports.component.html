@@ -1,0 +1,14 @@
+<p-tabView>
+    <p-tabPanel header="Number Of Entries">
+        <p-progressSpinner class="modalLoader" *ngIf="loading"></p-progressSpinner>
+        <div *ngIf="!loading" style="width:1300px">
+            <p-chart type="bar" [data]="report1Data"></p-chart>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Users Averages">
+        <p-progressSpinner class="modalLoader" *ngIf="loading"></p-progressSpinner>
+        <div *ngIf="!loading" style="width:1300px">
+            <p-chart type="bar" [data]="report2Data" [options]="horizontalOptions"></p-chart>
+        </div>
+    </p-tabPanel>
+</p-tabView>

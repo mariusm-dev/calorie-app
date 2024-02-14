@@ -1,0 +1,13 @@
+::ng-deep .ui-timepicker.ui-widget-header{
+    padding:initial;
+    font-size:smaller;
+  }
+
+  ::ng-deep .p-datepicker {
+    font-size: 10px;
+    padding:0;
+  }
+
+  ::ng-deep.p-datepicker table td > span { 
+      height:20px;
+   }

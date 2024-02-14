@@ -1,0 +1,36 @@
+<div class="grid">
+    <div class="col-12">
+        <button style="float: right; margin: 10px;" pButton type="button" label="Add new entry" icon="pi pi-check"
+            class="p-button" (click)="openDialog()"></button>
+    </div>
+    <div class="col-12"></div>
+</div>
+<p-table [value]="entries" [loading]="loading">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Date</th>
+            <th>Food</th>
+            <th>Calories</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Is Admin</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-entry>
+        <tr>
+            <td>{{entry.date | date:'medium'}}</td>
+            <td>{{entry.food}}</td>
+            <td>{{entry.calories}}</td>
+            <td>{{entry.user.name}}</td>
+            <td>{{entry.user.emailAddress}}</td>
+            <td>{{entry.user.isAdmin}}</td>
+            <td>
+                <button pButton type="button" (click)="edit(entry)" icon="pi pi-pencil" class="p-button-text"></button>
+                <button pButton type="button" (click)="delete(entry)" icon="pi pi-trash" class="p-button-text"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<app-food-dialogue #d (refreshData)="getData()"></app-food-dialogue>

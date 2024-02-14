@@ -1,0 +1,11 @@
+.vs/*
+calorie-backend/.vs/*
+calorie-backend/Calorie.Api/bin
+calorie-backend/Calorie.Api/obj
+calorie-backend/Calorie.Api/.vs
+calorie-backend/Calorie.DAL/bin
+calorie-backend/Calorie.DAL/obj
+calorie-backend/Calorie.DAL/.vs
+calorie-backend/Calorie.Services/bin
+calorie-backend/Calorie.Services/obj
+calorie-backend/Calorie.Services/.vs

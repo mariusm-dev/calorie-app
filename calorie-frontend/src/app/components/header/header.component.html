@@ -1,0 +1,17 @@
+<div class="header grid">
+    <div class="col-1 picture">
+        <img src="../../../assets/kcal.png" width="70px">
+    </div>
+    <div class="col-7 title">
+        SIMPLE CALORIES APP
+    </div>
+    <div class="col-3" style="margin: auto; width: 320px;">
+        <p-menubar *ngIf="currentUserIsAdmin" [model]="items">
+        </p-menubar>
+    </div>
+    <div class="col-1">
+        <div style="float:right; margin:10px">
+            <app-user-profile></app-user-profile>
+        </div>
+    </div>
+</div>

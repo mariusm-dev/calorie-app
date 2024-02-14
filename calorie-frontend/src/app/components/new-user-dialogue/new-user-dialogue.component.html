@@ -1,0 +1,42 @@
+<p-dialog [(visible)]="dialogVisible" [modal]="true" [draggable]="false" [style]="{width: '50%'}"
+    (onHide)="hideDialogue()">
+    <ng-template pTemplate="header">Invite New User</ng-template>
+
+    <div *ngIf="dialogVisible" class="p-m-2">
+        <form *ngIf="formGroup && !newUserToken?.token" [formGroup]="formGroup"
+            class="p-fluid p-formgrid p-grid">
+            <div class="m-2 mb-4">
+                <label class="mb-2" for="food">Name</label>
+                <input type="text" class="mt-2" pInputText formControlName="name" />
+                <small *ngIf="formGroup?.controls?.name?.errors && submited" class="p-error">
+                    <ng-container *ngIf="formGroup?.controls?.name?.errors?.required">
+                        Required
+                    </ng-container>
+                </small>
+            </div>
+            <div class="m-2 mb-4">
+                <label class="mb-2" for="calories">Email</label>
+                <input type="text" class="mt-2" pInputText formControlName="emailAddress" />
+                <small *ngIf="formGroup?.controls?.emailAddress?.errors && submited" class="p-error">
+                    <ng-container *ngIf="formGroup?.controls?.emailAddress?.errors?.required">
+                        Required
+                    </ng-container>
+                    <ng-container *ngIf="formGroup?.controls?.emailAddress?.errors?.email">
+                        You must enter a valid email
+                    </ng-container>
+                </small>
+            </div>
+        </form>
+    </div>
+    <textarea #tokenEl class="token" *ngIf="newUserToken?.token" rows="4" readonly pInputTextarea [(ngModel)]="newUserToken.token"></textarea>
+    <p-footer>
+        <button *ngIf="!newUserToken?.token" [disabled]="saveInProgress" pButton pRipple (click)="hideDialogue()" type="button" label="CANCEL"
+            class="p-button-rounded p-button-secondary"></button>
+        <button *ngIf="!newUserToken?.token" [disabled]="saveInProgress" pButton pRipple (click)="submit()" type="button" label="GET USER TOKEN"
+            class="p-button-rounded p-button-warning">
+            <p-progressSpinner class="btnLoader" *ngIf="saveInProgress"></p-progressSpinner>
+        </button>
+        <button *ngIf="newUserToken?.token" [disabled]="saveInProgress" pButton pRipple (click)="copyToClipboard()" type="button" label="COPY TO CLIPBOARD"
+            class="p-button-rounded p-button-primary"></button>
+    </p-footer>
+</p-dialog>

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="token">
+        <p-card header="Token" >
+            <div class="grid">
+                <textarea class="col-12 token-input" rows="3" pInputTextarea [(ngModel)]="token"></textarea>
+                <div class="col-12">
+                    <button pButton pRipple (click)="submit()" type="button" label="SUBMIT"
+                        class="p-button-rounded p-button-success token-submit"></button>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.modalLoader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.btnLoader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:20px;
+    height:20px;
+}
+
+.red .p-progressbar-value  {
+    background:red!important;
+}
+.orange .p-progressbar-value  {
+    background:orange!important;
+}
+
+.p-progressbar-value  {
+    background:#22C55E!important;
+}

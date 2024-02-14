@@ -1,0 +1,6 @@
+<p-skeleton *ngIf="!userAcronim" shape="circle" size="50px"></p-skeleton>
+<div *ngIf="userAcronim" class="user" (click)="menu.toggle($event)">
+    {{userAcronim}}
+</div>
+
+<p-menu #menu [popup]="true" [model]="items"></p-menu>
